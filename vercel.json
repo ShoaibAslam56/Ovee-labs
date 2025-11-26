@@ -9,5 +9,6 @@
       "source": "/",
       "destination": "/demo-seo-agency.html"
     }
-  ]
+  ],
+  "public": true
 }
