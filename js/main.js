@@ -2009,6 +2009,8 @@
             let delaySecond = 1.5,
                     expireDays = 30,
                     cookieName = 'crafto-promo-popup';
+            // Clear the cookie to show popup again (remove this line after testing)
+            deleteCookie(cookieName);
             if (getCookie(cookieName) != 'shown') {
                 setTimeout(function () {
                     $.magnificPopup.open({
@@ -2592,6 +2594,11 @@
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         var expires = (exdays != 0 && exdays != '') ? d.toUTCString() : 0;
         document.cookie = cname + "=" + cvalue + ";expires=" + expires + ";path=/";
+    }
+
+    // Delete cookie
+    function deleteCookie(cname) {
+        document.cookie = cname + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
     }
 
     /* ===================================
